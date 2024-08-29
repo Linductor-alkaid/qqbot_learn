@@ -27,6 +27,8 @@ windows 下载exe，双击运行即可，全自动安装（如遇权限问题请
 
 ### 下载插件LLonebot
 参考官方的[下载方法](https://llonebot.github.io/zh-CN/guide/getting-started)
+下载对应系统版本的压缩包，然后在`LiteLoaderQQNT`的插件管理器中选择安装插件导入，再重启qq就完成了。
+当打开qq设置可以看到`llonebot`的时候，就说明已经安装成功了。
 
 ### 机器人主体——nonebot2
 
