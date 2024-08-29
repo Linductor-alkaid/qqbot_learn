@@ -1,6 +1,11 @@
+# 深度学习项目实践——qq聊天机器人（transformer）（二）配置环境与部署
+
+上一节我们讲解了qq聊天的原理和qq机器人的框架以及运行流程，这一节我们来讲怎么配置环境，部署qq机器人。
+
 ## 第三步——怎么做（配置环境，部署qq机器人）
-怎么办，这么多部分，看起来要做一个qq机器人似乎很复杂。
-天塌了总有大佬顶着，不管是反向websocket客户端还是机器人主体都有大佬们写好的框架可以使用，我们可以直接借来部署，实现自己的聊天机器人。
+
+有关代替qq客户端实现反向websocket连接这一部分内容由于一些原因，我无法在这里具体讲解，我把这部分内容放到了github中[我的项目](https://github.com/Linductor-alkaid/qqbot_learn)内,请自行查看。
+
 
 ### 反向websocket客户端——LLonebot
 
@@ -30,3 +35,8 @@ windows 下载exe，双击运行即可，全自动安装（如遇权限问题请
 ### 部署nonebot2
 
 由于nonebot2对python环境有要求，所以建议使用虚拟环境或者anaconda来部署nonebot2，具体步骤如下：
+
+#### 推荐方法：使用anaconda配置环境
+
+具体anaconda的安装方法可以参考我之前发过的在[ubuntu上配置pytorch环境](http://t.csdnimg.cn/B30Yi)的文章
+
