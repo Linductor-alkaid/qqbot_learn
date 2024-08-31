@@ -107,5 +107,70 @@ windows 下载exe，双击运行即可，全自动安装（如遇权限问题请
    ```bash
    conda deactivate
    ```
+## 第二步：部署简单的qq机器人
 
+### 创建nonebot2项目
 
+参考nonebot2的[官方文档](https://nonebot.dev/)，使用nonebot脚手架创建一个简单的nonebot2项目
+
+在打开虚拟环境的终端中输入以下命令：
+
+```bash
+nb create
+```
+
+这一指令将会执行创建项目的流程，你将会看到一些询问：
+
+- 项目模板
+```bash
+    [?] 选择一个要使用的模板: bootstrap (初学者或用户)
+```
+这里我们选择 bootstrap 模板，它是一个简单的项目模板，能够安装商店插件。如果你需要自行编写插件，这里请选择 simple 模板。
+
+- 项目名称
+```bash
+[?] 项目名称: qqbat
+```
+这里我们以 qqbot 为例，作为项目名称。你可以根据自己的需要来命名。
+
+- 其他选项 请注意，多选项使用空格选中或取消，回车确认。
+```bash
+[?] 要使用哪些驱动器? FastAPI (FastAPI 驱动器)
+[?] 要使用哪些适配器? Console (基于终端的交互式适配器)
+[?] 立即安装依赖? (Y/n) Yes
+[?] 创建虚拟环境? (Y/n) Yes
+```
+这里我们选择了创建虚拟环境，nb-cli 在之后的操作中将会自动使用这个虚拟环境。如果你不需要自动创建虚拟环境或者已经创建了其他虚拟环境，nb-cli 将会安装依赖至当前激活的 Python 虚拟环境。
+
+- 选择内置插件
+```bash
+[?] 要使用哪些内置插件? echo
+```
+这里我们选择 echo 插件作为示例。这是一个简单的复读回显插件，可以用于测试你的机器人是否正常运行。
+
+### 启动nonebot2项目
+
+在命令行中进入项目文件夹，然后输入以下命令启动nonebot2项目：
+
+```bash
+cd qqbot # 项目名称，进入项目文件夹
+nb run
+```
+
+现在应该已经运行起来了你的第一个 NoneBot 项目了！请注意，生成的项目中使用了 FastAPI 驱动器和 Console 适配器，你之后可以自行修改配置或安装其他适配器。但此时的qq机器人并没有登陆qq，也无法与qq进行交互，接下来我们需要在qq配置反向websocket客户端
+
+### 配置反向websocket客户端
+
+此部分内容由于一些原因无法在此处展示，请查阅github中[该项目](https://github.com/Linductor-alkaid/qqbot_learn)中这一节的内容
+
+打开qq，右下角打开qq设置
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/6f9624e320414778bdd0e2015041a1a7.png)
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/c0c9d75b97ee43cdb2f76809c9c2aa27.png)
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/f4fe9c9b1bb640d785df7a561956c5ab.png)
+添加反响websocket服务的监听地址
+```
+ws://127.0.0.1:8080/onebot/v11/ws
+```
+
+修改完成后向下划找到保存，保存后就能在终端中看到提示`nonebot`连接到qq了，这个时候我们的简单qq机器人就部署完成了。
